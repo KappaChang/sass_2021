@@ -1,5 +1,7 @@
 @import "_reset.scss";
 @import "_variable.scss";
+@import "_flexBox.scss";
+@import "_layout.scss";
 @import "_dataAttribute";
 
 html {
@@ -10,19 +12,4 @@ html {
         touch-action: manipulation;
         height: 100%;
     }
-}
-
-.container {
-    box-sizing: border-box;
-    padding: 1rem;
-    background-color: green;
-    
-    &[data-inset="1rem"]{
-        padding: 1rem;
-    }
-    @for $i from 0 through 4 {
-        &[data-inset="#{$i * 0.5}rem"] {
-          padding: $i * 0.5rem;
-        }
-      } 
 }
