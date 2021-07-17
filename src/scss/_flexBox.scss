@@ -7,4 +7,23 @@
 
 @mixin boxSizing {
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+// 已知有幾個 div 為一排
+@for $i from 0 through 24 {
+    .flex_#{$i} {
+        flex: $i;
+    }
+}
+
+// 用在不確定會有幾個 div，指定一排會有幾個
+// 例:一排要顯示5個，但總共有10個div
+@for $i from 1 through 20 {
+    [data-row-count="#{$i}"]{
+        .data_row {
+            width: calc(100%/#{$i});
+        }
+    }
 }
