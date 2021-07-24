@@ -25,6 +25,8 @@
         .data_row {
             width: calc(100%/#{$i});
         }
+    }
+}
 
 .row {
     @include boxSizing;
