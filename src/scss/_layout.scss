@@ -1,27 +1,137 @@
 .container {
-    @include flexBox(row, stretch, flex-start);
     @include boxSizing();
-    padding: 1rem;
-    flex-wrap: wrap;
+    background: url(../img/pc/bg.jpg) no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    min-width: 1680px;
+    min-height: 900px;
 }
-
-.data_row {
+.top {
     @include boxSizing();
-    border: 1px solid #ccc;
-    min-height: 60px;
-    word-break: break-all;
-}
+    width: 100%;
+    height: 180px;
+    
+    //background: rgba(255, 0, 0, 0.137);
 
-.test {
-    width: 500px;
-    height: 300px;
-    border: 1px solid #333;
-}
+    .top_info {
+        width: 100%;
+        height: 100%;   
+        max-width: 400px;
+        max-height: 93px;
+        background: url(../img/pc/user_status_bg.png);
+        background-size: cover;
+    }
+    .top_coin {
+        background: red;
+    }
+    .top_submenu {
+        //background: yellow;
+        height: 100%;
 
-.xs-box {
-    display: block;
-    width: 60px;
-    height: 60px;
-    background: #333;
-    margin: 0.5rem;
+        .top_submenu-item {
+            display: block;
+            width: 100%;
+            height: 100%;
+            max-width: 156px;
+
+            @for $i from 1 through 5 {
+                &[data-icon="#{$i}"] {
+                    background: url(../img/pc/top_menu_0#{$i}.png) no-repeat;
+                    background-size: 100%;
+                }
+            }
+        }
+    }
+}
+.center {
+    @include boxSizing();
+    
+
+    .left {
+        width: 500px;
+        margin-top: -19vh;
+        //background: yellowgreen;
+    
+        .left_daily {
+            width: 100%;
+            max-width: 430px;
+    
+            img {
+                width: 100%;
+            }
+        }
+        .left_quest {
+            width: 430px;
+            //background: yellow;
+
+            .left_quest-item {
+                width: 100%;
+                max-width: 400px;
+                min-height: 120px;
+                background: url(../img/pc/quest_bg.png) no-repeat;
+                background-size: 100%;
+            }
+        }
+    }
+    .right {
+        width: 100%;
+        height: 600px;
+        //background: green;
+
+        .right_room-btn {
+            display: block;
+            width: 100%;
+            height: 100%;
+            max-width: 465px;
+            //max-height: 600px;
+
+            @for $i from 1 through 3 {
+                &[data-icon="#{$i}"] {
+                    background: url(../img/pc/game0#{$i}.png) no-repeat;
+                    background-size: 100%;
+                }
+            }
+            &:first-child {
+                margin-right: -2rem;
+            }
+        }
+    }
+}
+.footer {
+    @include boxSizing();
+    
+    position: relative;
+    width: 100%;
+    height: 82px;
+    background: #07222d;
+
+    .footer_message {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 542px;
+        height: 254px;
+        background: rgb(0, 68, 255);
+    }
+    .footer_menu {
+        width: 100%;
+        height: 82px;
+        max-width: 1165px;
+        //background: red;
+
+        .footer_menu-item {
+            width: 100%;
+            height: 100%;
+            max-height: 68px;
+            margin-right: 2px;
+
+            @for $i from 1 through 6 {
+                &[data-icon="#{$i}"] {
+                    background: url(../img/pc/bottom_menu_0#{$i}.png) no-repeat;
+                    background-size: 100%;
+                }
+            }
+        }
+    }
 }
