@@ -12,7 +12,22 @@
 <body>
   <div class="container row vertical space_between">
     <div class="top row horizontal">
-      <div class="top_info">121231</div>
+      <div class="top_info">
+        <div class="info_ava flex_1" data-space-right="1rem">
+          <img src="./img/pc/ava.jpg" alt="Minions">
+        </div>
+        <div class="info_name-block flex_3" data-space-right="1rem">
+          <div class="info_name-name">KappaKAppa</div>
+          <div class="info_name-lv">
+            <div class="info_name-lv--active"></div>
+            <div class="info_name-lv--number">Lv100</div>
+          </div>
+        </div>
+        <div class="info_star-block flex_2 row horizontal v_center">
+          <span class="info_star--star flex_1"><img src="./img/pc/star.svg" alt="star"></span>
+          <span class="info_star--number flex_1 row vertical v_center">x 123</span>
+        </div>
+      </div>
       <div class="top_coin">2323232</div>
         <ul class="top_submenu row horizontal h_end">
           <li class="top_submenu-item" data-icon="1" data-space-right="1rem"></li>
@@ -26,10 +41,34 @@
       <div class="left">
         <div class="left_daily row vertical"><img src="./img/pc/daily_quest_header.png"></div>
         <div class="left_quest row vertical h_center">
-          <div class="left_quest-item">123</div>
-          <div class="left_quest-item"></div>
-          <div class="left_quest-item"></div>
-          <div class="left_quest-item"></div>
+          <div class="left_quest-item row horizontal v_center">
+            <div class="quest-item_get-reward flex_1"></div>
+            <div class="quest-item_content active flex_3">完成1次連鎖</div>
+            <div class="row horizontal h_end flex_1">
+              <div class="quest-item_pic" data-icon="1"></div>
+            </div>
+          </div>
+          <div class="left_quest-item row horizontal v_center">
+            <div class="quest-item_lock flex_1"></div>
+            <div class="quest-item_content flex_3">完成2次連鎖</div>
+            <div class="row horizontal h_end flex_1">
+              <div class="quest-item_pic" data-icon="2"></div>
+            </div>
+          </div>
+          <div class="left_quest-item row horizontal v_center">
+            <div class="quest-item_lock flex_1"></div>
+            <div class="quest-item_content flex_3">不使用接關道具</div>
+            <div class="row horizontal h_end flex_1">
+              <div class="quest-item_pic" data-icon="3"></div>
+            </div>
+          </div>
+          <div class="left_quest-item row horizontal v_center">
+            <div class="quest-item_lock flex_1"></div>
+            <div class="quest-item_content flex_3">等級100時開放</div>
+            <div class="row horizontal h_end flex_1">
+              <div class="quest-item_pic" data-icon="4"></div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="right row horizontal h_end">
@@ -39,7 +78,7 @@
       </div>
     </div>
     <div class="footer row horizontal h_end">
-      <!-- <div class="footer_message"></div> -->
+      <div class="footer_message"></div>
       <ul class="footer_menu row horizontal v_center">
         <li class="footer_menu-item" data-icon="1"></li>
         <li class="footer_menu-item" data-icon="2"></li>

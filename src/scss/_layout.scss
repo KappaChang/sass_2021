@@ -15,12 +15,80 @@
     //background: rgba(255, 0, 0, 0.137);
 
     .top_info {
+        @include boxSizing();
         width: 100%;
         height: 100%;   
         max-width: 400px;
         max-height: 93px;
         background: url(../img/pc/user_status_bg.png);
         background-size: cover;
+        display: flex;
+        padding: 18px 20px;
+
+        .info_ava {
+            width: 100%;
+            height: 100%;
+            max-width: 52px;
+            max-height: 52px;
+            border-radius: 52px;
+            overflow: hidden;
+            
+            img {
+                width: 100%;
+            }
+        }
+        .info_name-block {
+            color: #FFFFFF;
+            overflow: hidden;
+
+            .info_name-lv {
+                width: 100%;
+                background: #101b2c;
+                height: 25px;
+                border-radius: 25px;
+                margin-top: 8px;
+                overflow: hidden;
+                position: relative;
+
+                .info_name-lv--active {
+                    @include boxSizing();
+
+                    background: linear-gradient(to bottom, #fce817 0%,#fce817 35%, #e6bc06 100%);
+                    height: 100%;
+                    width: 60%;
+                    border: 1px solid #fffb00;
+                    border-radius: 25px;
+                    
+                }
+                .info_name-lv--number {
+                    font-weight: bold;
+                    padding-top: 3px;
+                    text-align: center;
+                    color: #FFFFFF;
+                    -webkit-text-stroke: 1px #2c8fe0;
+                    position: absolute;
+                    top: 0px;
+                    left: 15px;
+                }
+            }
+        }
+        .info_star-block {
+            color: #FFFFFF;
+            //font-size: 1.4rem;
+            font-weight: bold;
+            
+            .info_star--star {
+                max-width: 40px;
+                
+                img {
+                    width: 100%;
+                }
+            }
+            .info_star--number {
+                height: 42px;
+                padding-left: 10px;
+            }
+        }
     }
     .top_coin {
         background: red;
@@ -34,12 +102,17 @@
             width: 100%;
             height: 100%;
             max-width: 156px;
+            cursor: pointer;
 
             @for $i from 1 through 5 {
                 &[data-icon="#{$i}"] {
                     background: url(../img/pc/top_menu_0#{$i}.png) no-repeat;
                     background-size: 100%;
                 }
+            }
+
+            &:hover {
+                opacity: 0.8;
             }
         }
     }
@@ -63,6 +136,7 @@
         }
         .left_quest {
             width: 430px;
+            margin-top: -20px;
             //background: yellow;
 
             .left_quest-item {
@@ -71,6 +145,55 @@
                 min-height: 120px;
                 background: url(../img/pc/quest_bg.png) no-repeat;
                 background-size: 100%;
+                cursor: pointer;
+
+                &::after {
+                    content: '';
+                    background: url(../img/pc/quest_bg_blur.png) no-repeat;
+                    background-size: 100%;
+                }
+                
+                .quest-item_lock {
+                    background: url(../img/pc/lock.png) no-repeat center center;
+                    background-size: contain;
+                    height: 60px;
+                    margin: 0 10px 0 30px;
+                }
+                .quest-item_get-reward {
+                    @extend .quest-item_lock;
+                    
+                    background: url(../img/pc/get_reward_btn.png) no-repeat center center;
+                    background-size: contain;
+                }
+                .quest-item_content {
+                    font-size: 1.7rem;
+                    font-weight: bold;
+                    color: #b4b4b5;
+
+                    &.active {
+                        background: linear-gradient(to bottom, #FFFFFF, #fbe30b, #fe8717);
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        color: transparent;
+                    }
+                }
+                .quest-item_pic {
+                    width: 104px;
+                    height: 120px;
+                    margin-right: -15px;
+
+                    @for $i from 1 through 4 {
+                        &[data-icon="#{$i}"] {                 
+                            @if $i <= 3 {
+                                background: url(../img/pc/fish_#{$i}.png) no-repeat;
+                                background-size: 100%;
+                            } @else if $i {
+                                background: url(../img/pc/treasurebox.png) no-repeat;
+                                background-size: 100%;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -85,6 +208,7 @@
             height: 100%;
             max-width: 465px;
             //max-height: 600px;
+            cursor: pointer;
 
             @for $i from 1 through 3 {
                 &[data-icon="#{$i}"] {
@@ -94,6 +218,9 @@
             }
             &:first-child {
                 margin-right: -2rem;
+            }
+            &:hover {
+                opacity: 0.8;
             }
         }
     }
@@ -111,13 +238,16 @@
         bottom: 0;
         left: 0;
         width: 542px;
-        height: 254px;
-        background: rgb(0, 68, 255);
+        height: 180px;
+        background: #071824;
+        opacity: 0.9;
+        //border: 1px solid #097480;
+        box-shadow: 1px -1px #097480;
     }
     .footer_menu {
         width: 100%;
         height: 82px;
-        max-width: 1165px;
+        max-width: 1100px;
         //background: red;
 
         .footer_menu-item {
@@ -125,12 +255,16 @@
             height: 100%;
             max-height: 68px;
             margin-right: 2px;
+            cursor: pointer;
 
             @for $i from 1 through 6 {
                 &[data-icon="#{$i}"] {
-                    background: url(../img/pc/bottom_menu_0#{$i}.png) no-repeat;
+                    background: url(../img/pc/bottom_menu_0#{$i}.png) no-repeat center center;
                     background-size: 100%;
                 }
+            }
+            &:hover {
+                opacity: 0.8;
             }
         }
     }
