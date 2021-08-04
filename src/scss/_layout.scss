@@ -285,10 +285,115 @@
         left: 0;
         width: 542px;
         height: 180px;
+        padding: 10px;
         background: #071824;
         opacity: 0.9;
         //border: 1px solid #097480;
         box-shadow: 1px -1px #097480;
+        display: flex;
+
+        .message_box {
+            //width: 100%;
+            height: 130px;
+            //background: red;
+            margin-right: 10px;
+            overflow-y: auto;
+
+            .box-inner {
+
+                .box-inner_tag--system {
+                    padding: 6px 14px;
+                    background: linear-gradient(to bottom, #f2ce00, #f26d00);
+                    color: #FFFFFF;
+                    text-align: center;
+                    width: 100%;
+                    max-width: 52px;
+                    margin-right: 10px;
+                    border-radius: 5px;
+                    font-size: 1.2rem;
+                    text-shadow: 1px 1px #000000;
+                }
+                .box-inner_tag--world {
+                    @extend .box-inner_tag--system;
+                    background: linear-gradient(to bottom, #45b0ff, #1e75ff);
+                }
+                .box-inner_tag--boat {
+                    @extend .box-inner_tag--system;
+                    background: linear-gradient(to bottom, #ff6435, #ff2804);
+                }
+                .box-inner_txt {
+                    line-height: 1.4;
+                    margin-top: 4px;
+                }
+                .box-inner_txt--green {
+                    color: #8dc21f;
+                }
+                .box-inner_txt--white {
+                    color: #FFFFFF;
+                }
+                .box-inner_txt--blue {
+                    color: #2396b2;
+                }
+                .box-inner_txt--red {
+                    color: #e95513;
+                }
+            }
+        }
+        .input_box {
+            margin: 10px 10px 0 0;
+            position: relative;
+
+            .input {
+                @include boxSizing();
+                width: 100%;
+                height: 40px;
+                background: #032e39;
+                border-radius: 3px;
+                padding: 2px 10px;
+                color: #FFFFFF;
+                border: 0px;
+                font-size: 1rem;
+            }
+            .input_icon-send {
+                position: absolute;
+                right: 8px;
+                top: 8px;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 12px 0 12px 26px;
+                border-color: transparent transparent transparent #2c5b75;
+                cursor: pointer;
+
+                &::before {
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 2px 0 2px 18px;
+                    border-color: transparent transparent transparent #032e39;
+                    position: absolute;
+                    left: -30px;
+                    top: -1px;
+                }
+            }
+        }
+        
+        .message_icon-arror-top {
+            width: 100%;
+            height: 100%;
+            max-width: 40px;
+            max-height: 40px;
+            cursor: pointer;
+            margin-left: 5px;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+        .message_icon-setting {
+            @extend .message_icon-arror-top;
+        }
     }
     .footer_menu {
         width: 100%;
@@ -313,5 +418,27 @@
                 opacity: 0.8;
             }
         }
+    }
+    .txt_menu {
+        color: #05c3d9;
+        position: absolute;
+        bottom: 90px;
+        right: 10px;
+        font-size: 0.6rem;
+
+        &::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #05c3d9;
+            margin-right: 5px;
+            display: inline-block;
+        }
+    }
+    .txt_chatlog {
+        @extend .txt_menu;
+        transform:rotate(90deg);
+        bottom: 155px;
+        right: -50px;
     }
 }
