@@ -4,7 +4,6 @@
     background-size: cover;
     width: 100%;
     height: 100%;
-    z-index: -2;
     //min-width: 1280px;
     // min-height: 900px;
 }
@@ -206,26 +205,21 @@
                 background: url(../img/pc/quest_bg.png) no-repeat left center;
                 background-size: contain;
                 cursor: pointer;
-                position: relative;
-                
-                // &:hover {
-                //    filter: blur(3px);
-                // }
-                // &::after {
-                //     content: '';
-                //     background: url(../img/pc/quest_bg_blur.png) no-repeat left center;
-                //     background-size: 100%;
-                //     transform: scale(1.04);
-                //     filter: blur(10px);
-                //     width: 100%;
-                //     height: 100%;
-                //     position: absolute;
-                //     left: 0;
-                //     top: 0;
-                //     z-index: -1;
-                //     opacity: 1;
 
-                // }
+                &::after {
+                    content: '';
+                    background: url(../img/pc/quest_bg_blur.png) no-repeat left center;
+                    background-size: 100%;
+                    transform: scale(1.04);
+                    filter: blur(10px);
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    z-index: -1;
+                    opacity: 1;
+                }
 
                 .quest-item_lock {
                     background: url(../img/pc/lock.png) no-repeat center center;
