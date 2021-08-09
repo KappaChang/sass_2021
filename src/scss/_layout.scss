@@ -4,13 +4,13 @@
     background-size: cover;
     width: 100%;
     height: 100%;
-    min-width: 1280px;
-    min-height: 900px;
+    //min-width: 1280px;
+    // min-height: 900px;
 }
 .top {
     @include boxSizing();
     width: 100%;
-    height: 180px;
+    // height: 180px;
     
     //background: rgba(255, 0, 0, 0.137);
 
@@ -20,8 +20,8 @@
         height: 100%;   
         max-width: 400px;
         max-height: 93px;
-        background: url(../img/pc/user_status_bg.png);
-        background-size: cover;
+        background: url(../img/pc/user_status_bg.png) no-repeat;
+        background-size: contain;
         display: flex;
         padding: 18px 20px;
 
@@ -125,16 +125,16 @@
 
         .top_submenu-item {
             display: block;
-            width: 100%;
-            height: 100%;
-            max-width: 156px;
+            width: 16vh;
+            height: 18vh;
+            //max-width: 156px;
             cursor: pointer;
             position: relative;
 
             @for $i from 1 through 5 {
                 &[data-icon="#{$i}"] {
                     background: url(../img/pc/top_menu_0#{$i}.png) no-repeat;
-                    background-size: 100%;
+                    background-size: contain;
                 }
             }
 
@@ -151,8 +151,8 @@
                 text-align: center;
                 padding-top: 6px;
                 position: absolute;
-                right: 22px;
-                bottom: 28px;
+                right: 3vh;
+                bottom: 3vh;
             }
             .submenu_new {
                 @extend .submenu_count;
